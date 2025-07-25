@@ -7,8 +7,6 @@ import time
 import pandas as pd
 from datetime import datetime
 
-#url = 'https://www.tokopedia.com/hijrahfood/product?perpage=40'
-
 url = input("Masukkan url toko dengan link www.tokopedia.com/nama_toko/product?perpage=40 : ")
 JumlahPage = input("Masukkan jumlah halaman yang ingin diambil: ")
 
@@ -24,7 +22,6 @@ if url :
         soup = BeautifulSoup(driver.page_source, "html.parser")
         containers = soup.findAll('div', attrs={'class': 'gG1uA844gIiB2+C3QWiaKA=='})
 
-        #print("Produk", " * " , "Harga (Rp)", " * " , "Terjual")
         for container in containers:
             try:
                 product_name_span = container.find('span', class_='+tnoqZhn89+NHUA43BpiJg==')
